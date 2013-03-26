@@ -1,0 +1,34 @@
+{
+  "name": "builders-couchbase-2.0",
+  "description": "Install packages and other configurations required for running 2.0 builds",
+  "maintainer": "Couchbase Inc.",
+  maintainer_email":"build@couchbase.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "fedora": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "builders-couchbase-2.0" : "Install packages and other configurations required for running 2.0 builds"
+  },
+  "version": "1.0.0"
+}

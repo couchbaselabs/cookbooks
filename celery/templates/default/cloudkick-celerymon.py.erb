@@ -1,0 +1,63 @@
+#!/usr/bin/python 
+import urllib, datetime, time, simplejson
+
+baseurl = 'http://localhost:<%= node[:celery][:celerymon_port] %>'
+
+try:
+    tasks = simplejson.loads(urllib.urlopen('%s/api/task/name/' % baseurl).read())
+except IOError:
+    print 'status err could not connect to celerymon'
+
+error = <%= node[:celery][:celerymon_error_seconds] %>
+
+everything_ok = False
+errored_things = set()
+
+now = time.mktime(datetime.datetime.now().timetuple())
+
+TASK_STATES = (
+        'SUCCESS',
+        'FAILURE',
+        'RECEIVED',
+        'REVOKED',
+        'STARTED',
+        'PENDING',
+        'RETRY'
+        )
+
+for task in tasks:
+    request = urllib.urlopen('%s/api/task/name/%s' % (baseurl, task))
+    response = simplejson.loads(request.read())
+    # Get the very first (last) entry 
+    result = response[0][1]
+
+    if result['state'] != 'SUCCESS':
+        everything_ok = False
+        errored_things.add(task)
+    elif now - result['succeeded'] > error:
+        everything_ok = False
+        errored_things.add(task)
+    else:
+        everything_ok = True
+
+if everything_ok:
+    print "status ok all celery tasks are up to date"
+elif not everything_ok and not len(tasks):
+    print "status err No tasks registered!"
+else:
+    print "status err %s tasks are late" % ' '.join(errored_things)
+
+
+all_tasks = simplejson.loads(urllib.urlopen('%s/api/task/' % baseurl).read())
+counters = dict([(key.lower(), 0) for key in TASK_STATES])
+for task in all_tasks:
+    task = task[1]
+    if not task.get('state', None):
+        continue
+
+    state = task.get('state', None)
+    counters[state.lower()] += 1
+
+for name, value in counters.iteritems():
+    print 'metric %s gauge %i' % (name, value)
+

@@ -1,0 +1,1000 @@
+   15  knife node run_list add ntp
+   16  knife node run_list add mango-001.hq.northscale.net ntp
+   17  knife node run_list add mango-001.hq.northscale.net chef-client
+   18  date
+   19  knife node run_list add mango-001.hq.northscale.net users
+   20  knife node run_list add mango-001.hq.northscale.net sudo
+   21  knife
+   22  knife data bag users edit karan
+   23  knife data bag list
+   24  knife data bag show users
+   25  knife data bag edit users peter
+   26  export EDITOR=vi
+   27  knife data bag edit users peter
+   28  tail -f /tmp/disney.txt  | egrep "Bytes in page heap freelist"
+   29  tail -f /tmp/disney.txt  | egrep "Bytes in page heap freelist"
+   30  tail -f /tmp/disney.txt 
+   31  exit
+   32  history | grep knife
+   33  ls
+   34  ls
+   35  exit
+   36  ls
+   37  cd cookbooks
+   38  ls
+   39  cd chef
+   40  ls
+   41  vi metadata.rb 
+   42  cd ..
+   43  ls
+   44  clear
+   45  cd cookbooks/
+   46  ls
+   47  ls -lth
+   48  clear
+   49  ls
+   50  cd
+   51  ls
+   52  knife bootstrap -d rhel5-rbel 10.3.2.88 --ssh-user=root --ssh-password=password
+   53  ls
+   54  pwd
+   55  ping blog.frameos
+   56  ping blog.frameos.org
+   57  ifconfig
+   58  clear
+   59  history
+   60  ls
+   61  cd cookbooks
+   62  ls
+   63  knife bootstrap
+   64  knife bootstrap 10.3.2.88 -
+   65  knife bootstrap 10.3.2.88 
+   66  knife bootstrap 10.3.2.88 --ssh-user=root --ssh-password=password
+   67  knife bootstrap 10.3.2.88 --ssh-user=root --ssh-password=password
+   68  knife bootstrap 10.3.2.89 --ssh-user=root --ssh-password=password
+   69  cd /etc/cheg
+   70  cd /etc/chef
+   71  ls
+   72  vi validation.pem 
+   73  knife client show name_of_client
+   74  knife client show cen-2111.hq.couchbase.com
+   75  knife client
+   76  knife client list
+   77  cd /etc/
+   78  ls
+   79  cd chef/
+   80  ls
+   81  vi validation.pem 
+   82  knife client list
+   83  knife client list
+   84  clear
+   85  knife client list cen-2111.hq.couchbase.com
+   86  knife cookbook site install getting-started
+   87  ls
+   88  ls
+   89  cd
+   90  ls
+   91  knife cookbook site install getting-started
+   92  nife cookbook list --all
+   93  knife cookbook list --all
+   94   knife cookbook show getting-started
+   95   knife cookbook show redis 0.1.6 | grep frozen
+   96  knife cookbook site install getting-started
+   97   knife cookbook site download getting-started
+   98  tar zxvf getting-started-0.2.0-tar.gz
+   99  tar zxvf /root/getting-started-0.2.0-tar.gz
+  100  tar zxvf /root/getting-started-0.4.0.tar.gz 
+  101  del getting-started-0.4.0.tar.gz 
+  102  pwd
+  103  cd /etc/chef/
+  104  ls
+  105  cd
+  106  knife cookbook upload getting-started
+  107  knife node run_list add cen-2111.hq.couchbase.com 'recipe[getting-started]'
+  108  knife cookbook site install rabbitmq
+  109   knife cookbook site download rabbitmq
+  110  tar -xvfz rabbitmq-1.8.0.tar.gz 
+  111  tar -xvf rabbitmq-1.8.0.tar.gz 
+  112  rm rabbitmq-1.8.0.tar.gz 
+  113  knife cookbook upload rabbitmq/
+  114  ls
+  115  cd cookbooks
+  116  ls
+  117  cd ..
+  118  ls
+  119  mv rabbitmq/* cookbooks/.
+  120  mv rabbitmq/ cookbooks/.
+  121  knife cookbook upload rabbitmq/
+  122  clear
+  123  ls
+  124  ls -lth
+  125  rm getting-started-0.4.0.tar.gz 
+  126  clear
+  127  ls
+  128  cd cookbooks
+  129  knife cookbook upload rabbitmq
+  130  knife node run_list add cen-2111.hq.couchbase.com 'recipet[rabbitmq]'
+  131  knife node run_list del cen-2111.hq.couchbase.com 'recipet[rabbitmq]'
+  132  knife node run_list remove cen-2111.hq.couchbase.com 'recipet[rabbitmq]'
+  133  knife node run_list remove cen-2111.hq.couchbase.com 'recipe[recipet[rabbitmq]]'
+  134  knife node run_list add cen-2111.hq.couchbase.com 'recipe[rabbitmq]'
+  135  knife node run_list remove cen-2111.hq.couchbase.com 'recipe[recipe[recipe[recipe[recipe[recipe[recipe[recipe[recipe[recipe[recipe[recipe[recipet[rabbitmq]]]]]]]]]]]]]'
+  136  knife node run_list remove cen-2111.hq.couchbase.com 'recipe[rabbitmq]'
+  137  knife node run_list add cen-2111.hq.couchbase.com 'recipe[rabbitmq]'
+  138  knife node run_list remove cen-2111.hq.couchbase.com 'recipe[recipet[rabbitmq]'
+  139   knife cookbook create temp_one
+  140  clear
+  141  knife
+  142  knife show node
+  143  knife show node cen-2111.hq.couchbase.com
+  144  clear
+  145  ls
+  146  cd temp_one
+  147  ls
+  148  cd ..
+  149  ls
+  150  ls te*
+  151   knife cookbook create temp_one
+  152  ls
+  153  cd cookbooks
+  154  ls
+  155  ls t*
+  156   knife cookbook create temp_one
+  157  ls t*
+  158  cd /etc/
+  159  cd chef/
+  160  ls
+  161  cd
+  162  cd ..
+  163  ls
+  164  pwd
+  165  ls
+  166  cd
+  167  ls
+  168  knife cookbook
+  169  knife cookbook create cookBookOne 
+  170  ls
+  171  vi README.md 
+  172  cd cookbooks
+  173  ls
+  174  cd chef
+  175  ls
+  176  cd recipes/
+  177  ls
+  178  cd ..
+  179  cd ..
+  180  ls
+  181  knife cookbook create 1
+  182  ls
+  183  cd rabbitmq/
+  184  cd recipes/
+  185  ls
+  186  vi default.rb 
+  187  clear
+  188  pwf
+  189  pwd
+  190  cd ..
+  191  ls
+  192  vi README.md 
+  193  cd resources/
+  194  ls
+  195  vi user.rb 
+  196  vi vhost.rb 
+  197  cd ..
+  198  ls
+  199  cd re
+  200  cd recipes/
+  201  ls
+  202  vi mgmt_console.rb 
+  203  vi default.rb 
+  204  clear
+  205  ls
+  206  cd cookbooks
+  207  ls
+  208  clear
+  209  ls
+  210  cd rabbitmq/
+  211  ls
+  212  clear
+  213  cd recipes/
+  214  ls
+  215  vi default.rb 
+  216  knife cookbook create ntp
+  217  ls
+  218  cd cookbookss
+  219  cd cookbooks
+  220  clear
+  221  ls nto
+  222  ls ntp
+  223  cd ntp
+  224  ls
+  225  cd recipes/
+  226  ls
+  227  vi default.rb 
+  228  vi ..
+  229  cd ..
+  230  ls
+  231  vi templates/default/ntp.conf.erb 
+  232  ls -lth templates/default/ntp.conf.erb 
+  233  cd ..
+  234  ls
+  235  cd ntp/
+  236  ls
+  237  cd recipes/
+  238  ls
+  239  vi default.rb 
+  240  cd ..
+  241  cd ..
+  242  ls
+  243  knife cookbook create shell_to_chef
+  244  ls
+  245  exit
+  246  ls
+  247  cd cookbooks
+  248  ls
+  249  ls -a
+  250  clear
+  251  ls
+  252  cd cookbooks/
+  253  ls
+  254  cd ..
+  255  ls
+  256  cd ..
+  257  ls
+  258  ls
+  259  clear
+  260  ls
+  261  cd /etc/
+  262  ls
+  263  cd
+  264  grep -r "shell_to_chef" *
+  265  pwd
+  266  knife cookbook create shell_to_chef
+  267  ls
+  268  grep -r "shell_to_chef" *
+  269  cd /etc/
+  270  grep -r "shell_to_chef" *
+  271  cd 
+  272  cd cookbooks
+  273  ls
+  274  ls 0lth
+  275  ls -lth
+  276  cd chef
+  277  ls
+  278  ls -lth
+  279  cd ..
+  280  clear
+  281  ls
+  282  ls -lth
+  283  git stTUS
+  284  CLEAR
+  285  clear
+  286  git status
+  287  ls -l
+  288  ls
+  289  cd .chef
+  290  ls
+  291  vi knife.rb 
+  292  cd ..
+  293  ls
+  294  cd ./chef
+  295  pwd
+  296  cd 
+  297  cd .chef
+  298  ls
+  299  vi knife.rb 
+  300  grep -r "cookbook_path" *
+  301  ls
+  302  cd cookbooks/
+  303  ls
+  304  cd ..
+  305  ls
+  306  vi knife.rb 
+  307  vi knife.rb 
+  308  cp knife.rb knife.rb.orig
+  309  vi knife.rb
+  310  cd ..
+  311  ls
+  312  cd cookbooks
+  313  ls
+  314  cd ..
+  315  cd cookbooks
+  316  ls
+  317   pwf
+  318  pwd
+  319  cd ..
+  320  cd .chef/
+  321  vi knife.rb
+  322  knife cookbook create phpapp
+  323  cd cookbooks/
+  324  ls
+  325  cd chef
+  326  ls
+  327  cd ..
+  328  ls
+  329  ls
+  330  cd ..
+  331  ls
+  332  cd ..
+  333  ls
+  334  cd /root/cookbooks
+  335  ls
+  336  cd phpapp/
+  337  ls
+  338  clear
+  339  cd ..
+  340  rm -rf phpapp/
+  341  ls
+  342  knife cookbook create system-test
+  343  cd system-test/
+  344  ls
+  345  nano  metadata.rb 
+  346  clear
+  347  cd cookbooks
+  348  ls
+  349  clear
+  350  ls
+  351  cd system-test/
+  352  ls
+  353  clear
+  354  vi metadata.rb
+  355  vi recipes/default.rb 
+  356  cd ../..
+  357  ls
+  358  vi solo.rb
+  359  vi my.json
+  360  chef-solo -c solo.rb -j my.json 
+  361  clear
+  362  ls
+  363  vi vm.json 
+  364  cat /etc/*release
+  365  vi my.json
+  366  chef-solo -c solo.rb -j my.json 
+  367  vi my.json
+  368  chef-solo -c solo.rb -j my.json 
+  369  vi my.json
+  370  chef-solo -c solo.rb -j my.json 
+  371  ls
+  372  rm my.json 
+  373  ls
+  374  clear
+  375  ls
+  376  rm solo.rb 
+  377  ls
+  378  clear
+  379  ls
+  380  cd cookbooks
+  381  ls
+  382  cd system-test/
+  383  ls
+  384  vi metadata.rb
+  385  ls
+  386  clear
+  387  vi README.md 
+  388  ls
+  389  cd resources/
+  390  ls
+  391  cd ..
+  392  cd recipes/
+  393  ls
+  394  vi default.rb 
+  395  pwd
+  396  vi default.rb 
+  397  ls
+  398  vi default.rb 
+  399  ls
+  400  cd ..
+  401  ls
+  402  ls
+  403  cd ..
+  404  cd ..
+  405  knife 
+  406  knife  | grep node
+  407  knife node list
+  408  knife  | grep cookbook
+  409  knife cookbook upload rabbitmq
+  410  knife node list
+  411  knife  | grep node
+  412  knife node run_list re
+  413  knife  | grep node
+  414  knife node run_list remove cen-2111.hq.couchbase.com *
+  415  knife node run_list remove cen-2111.hq.couchbase.com getting-started,ntp
+  416  knife node run_list remove cen-2111.hq.couchbase.com getting-started,ntp
+  417  knife node run_list remove cen-2111.hq.couchbase.com receipe[ntp]
+  418  knife node run_list remove cen-2111.hq.couchbase.com recipe[ntp]
+  419  knife node run_list remove cen-2111.hq.couchbase.com recipe[*]
+  420  clear
+  421  knife node delete cen-2111.hq.couchbase.com
+  422  knife node create cen-2111.hq.couchbase.com
+  423  ls
+  424  vi $EDITOR
+  425  ls
+  426  knife node create cen-2111.hq.couchbase.com
+  427  export EDITOR="/usr/bin/vim"
+  428  knife node create cen-2111.hq.couchbase.com
+  429  export EDITOR=vi
+  430  knife node create cen-2111.hq.couchbase.com
+  431  knife node list
+  432  knife node run_list add cen-2111.hq.couchbase.com recipe[ntp]
+  433  knife node run_list add cen-2111.hq.couchbase.com recipe[rabbitmq]
+  434  knife cookbook upload rabbitmq
+  435  knife node list
+  436  knife node run_list add cen-2111.hq.couchbase.com role[guest]
+  437  knife node run_list remove cen-2111.hq.couchbase.com role[guest]
+  438  knife node show cen-2111.hq.couchbase.com
+  439  clear
+  440  ls
+  441  ls *.json
+  442  vi vm.json 
+  443  chef --help
+  444  chef
+  445  ls
+  446  clear
+  447  ls
+  448  cd cookbooks
+  449  ls
+  450  vi metadata.rb 
+  451  knife client list
+  452  clear
+  453  knife node show cen-2111.hq.couchbase.com
+  454  clear
+  455  ls
+  456  cd .
+  457  cd ..
+  458  ls
+  459  vi vm.json 
+  460  ls -lth vm.json 
+  461  vi README.md `
+  462  vi README.md 
+  463  clear
+  464  ls
+  465  cd config
+  466  ls
+  467  vi rake.rb 
+  468  ls
+  469  history | boot
+  470  ls
+  471  history | boot
+  472  history | grep knife
+  473  cd /var/chef/
+  474  ls
+  475  knife bootstrap -d rhel5-rbel 10.1.4.21 --ssh-user=root --ssh-password=couchbase
+  476  ls
+  477  history | grep wget
+  478  cat  ~/.chef/bootstrap/rhel5-rbel.erb
+  479   knife node run_list add grap-016 sudo
+  480   knife node run_list add grape-016 sudo
+  481   knife node run_list add grape-016 users
+  482   knife node run_list add grape-016 chef-client
+  483  knife 
+  484  export EDITOR=vi
+  485  knife data bag edit 
+  486  history | grep knife
+  487  history | grep bag
+  488  knife data bag edit users dustin
+  489  knife data bag edit users farshid
+  490  knife data bag edit users steve
+  491  knife data bag edit users dustin
+  492  vi cookbooks/users/recipes/all.rb 
+  493  knife cookbooks upload users
+  494  knife cookbooks upload users
+  495  knife cookbook upload users
+  496  vi cookbooks/users/recipes/all.rb 
+  497  vi cookbooks/users/recipes/default.rb 
+  498  vi cookbooks/users/recipes/sysadmins.rb 
+  499  vi cookbooks/users/metadata.
+  500  vi cookbooks/users/metadata.json 
+  501  ls
+  502  cd site-cookbooks/
+  503  ls
+  504  cd ..
+  505  knife cookbook upload users
+  506  knife 
+  507  knife cookbook site list
+  508  knife cookbook list
+  509  vi cookbooks/users/metadata.rb 
+  510  knife 
+  511  knife cookbook upload users
+  512  cd cookbooks/
+  513  ls
+  514  cd users/
+  515  egrep -inr "1.0.0" .
+  516  cd ..
+  517  cd ..
+  518  ls
+  519  ls
+  520  cat /etc/chef/server.rb 
+  521  cat /etc/chef/expander.rb 
+  522  vi cookbooks/users/metadata.rb 
+  523  knife cookbook lisr
+  524  knife cookbook list
+  525  vi cookbooks/users/templates/default/authorized_keys.erb 
+  526  vi cookbooks/users/metadata.json 
+  527  vi cookbooks/users/metadata.json 
+  528  vi cookbooks/users/metadata.rb 
+  529  vi cookbooks/users/recipes/all.rb 
+  530  knife cookbook upload users
+  531  knife cookbook uplo
+  532  vi cookbooks/users/recipes/all.rb 
+  533  ls
+  534  cd cookbooks/
+  535  ls
+  536  cd ..
+  537  ls
+  538  cd cookbooks/
+  539  ls
+  540  cd ..
+  541  knife
+  542  knife show cookbook users
+  543  knife cookbook show users
+  544  knife cookbook show users
+  545  vi cookbooks/users/metadata.rb 
+  546  knife cookbook upload users
+  547  vi cookbooks/users/recipes/all
+  548  vi cookbooks/users/recipes/all.rb 
+  549  knife cookbook upload users
+  550  knife cookbook upload users
+  551  knife cookbook upload users
+  552  knife
+  553  knife cookbook show users
+  554  knife cookbook show users
+  555  vi cookbooks/users/recipes/all.rb 
+  556  vi cookbooks/users/metadata.rb 
+  557  vi cookbooks/users/README.md 
+  558  knife cookbook upload users
+  559  knife cookbook upload -a
+  560  knife cookbook upload -a
+  561  ls
+  562  cd cookbooks/
+  563  ls
+  564  cd cookbooks/
+  565  ls
+  566  cd ..
+  567  rm -rf cookbooks/
+  568  cd ..
+  569  knife cookbook upload -a
+  570  ls
+  571  cd cookbooks/
+  572  s
+  573  ls
+  574  cd ..
+  575  knife | grep cookbook
+  576  knife cookbook delete cookbooks
+  577  knife cookbook upload -a
+  578  ls
+  579  cd cookbooks/
+  580  ls
+  581  cd 1/
+  582  ls
+  583  cd ..
+  584  cd chef
+  585  ls
+  586  cd ..
+  587  ls
+  588  cd ..
+  589  knife
+  590  knife cookbook delete cookbooks 
+  591  knife cookbook delete cookbook
+  592  knife cookbook upload users
+  593  ls
+  594  cd nodes/
+  595  ls
+  596  ls
+  597  cd ..
+  598  knife 
+  599  knife cookbooks
+  600  knife cookbook
+  601  knife cookbook list
+  602  ls
+  603  cd cookbooks/
+  604  ls
+  605  cd /
+  606  find . -name users
+  607  cd /root/
+  608  ls
+  609  cd cookbooks
+  610  ls
+  611  cd /root/
+  612  ls
+  613  vi config
+  614  ls
+  615  cd cookbooks
+  616  ls
+  617  rm -rf cookbooks/
+  618  vi users/recipes/all.rb 
+  619  pwd
+  620  cd ..
+  621  ls
+  622  knife cookbooks upload -a
+  623  knife cookbook upload -a
+  624  vi cookbooks/users/metadata.rb 
+  625  vi cookbooks/users/recipes/all.rb 
+  626  knife | grep cookbook
+  627  knife cookbook delete users 1.1.2
+  628  knife users data bag
+  629  vi cookbooks/users/README.md 
+  630  knife data bag list
+  631  knife data bag list users
+  632  knife data bag delete users rags
+  633  history
+  634  history |grep knife
+  635  history | run_list
+  636  ls
+  637  history | boot
+  638  history | grep knife
+  639  cd /var/chef/
+  640  ls
+  641  knife bootstrap -d rhel5-rbel 10.1.4.21 --ssh-user=root --ssh-password=couchbase
+  642  ls
+  643  history | grep wget
+  644  cat  ~/.chef/bootstrap/rhel5-rbel.erb
+  645   knife node run_list add grap-016 sudo
+  646   knife node run_list add grape-016 sudo
+  647   knife node run_list add grape-016 users
+  648   knife node run_list add grape-016 chef-client
+  649  knife 
+  650  export EDITOR=vi
+  651  knife data bag edit 
+  652  history | grep knife
+  653  history | grep bag
+  654  knife data bag edit users dustin
+  655  knife data bag edit users farshid
+  656  knife data bag edit users steve
+  657  knife data bag edit users dustin
+  658  vi cookbooks/users/recipes/all.rb 
+  659  knife cookbooks upload users
+  660  knife cookbooks upload users
+  661  knife cookbook upload users
+  662  vi cookbooks/users/recipes/all.rb 
+  663  vi cookbooks/users/recipes/default.rb 
+  664  vi cookbooks/users/recipes/sysadmins.rb 
+  665  vi cookbooks/users/metadata.
+  666  vi cookbooks/users/metadata.json 
+  667  ls
+  668  cd site-cookbooks/
+  669  ls
+  670  cd ..
+  671  knife cookbook upload users
+  672  knife 
+  673  knife cookbook site list
+  674  knife cookbook list
+  675  vi cookbooks/users/metadata.rb 
+  676  knife 
+  677  knife cookbook upload users
+  678  cd cookbooks/
+  679  ls
+  680  cd users/
+  681  egrep -inr "1.0.0" .
+  682  cd ..
+  683  cd ..
+  684  ls
+  685  ls
+  686  cat /etc/chef/server.rb 
+  687  cat /etc/chef/expander.rb 
+  688  vi cookbooks/users/metadata.rb 
+  689  knife cookbook lisr
+  690  knife cookbook list
+  691  vi cookbooks/users/templates/default/authorized_keys.erb 
+  692  vi cookbooks/users/metadata.json 
+  693  vi cookbooks/users/metadata.json 
+  694  vi cookbooks/users/metadata.rb 
+  695  vi cookbooks/users/recipes/all.rb 
+  696  knife cookbook upload users
+  697  knife cookbook uplo
+  698  vi cookbooks/users/recipes/all.rb 
+  699  ls
+  700  cd cookbooks/
+  701  ls
+  702  cd ..
+  703  ls
+  704  cd cookbooks/
+  705  ls
+  706  cd ..
+  707  knife
+  708  knife show cookbook users
+  709  knife cookbook show users
+  710  knife cookbook show users
+  711  vi cookbooks/users/metadata.rb 
+  712  knife cookbook upload users
+  713  vi cookbooks/users/recipes/all
+  714  vi cookbooks/users/recipes/all.rb 
+  715  knife cookbook upload users
+  716  knife cookbook upload users
+  717  knife cookbook upload users
+  718  knife
+  719  knife cookbook show users
+  720  knife cookbook show users
+  721  vi cookbooks/users/recipes/all.rb 
+  722  vi cookbooks/users/metadata.rb 
+  723  vi cookbooks/users/README.md 
+  724  knife cookbook upload users
+  725  knife cookbook upload -a
+  726  knife cookbook upload -a
+  727  ls
+  728  cd cookbooks/
+  729  ls
+  730  cd cookbooks/
+  731  ls
+  732  cd ..
+  733  rm -rf cookbooks/
+  734  cd ..
+  735  knife cookbook upload -a
+  736  ls
+  737  cd cookbooks/
+  738  s
+  739  ls
+  740  cd ..
+  741  knife | grep cookbook
+  742  knife cookbook delete cookbooks
+  743  knife cookbook upload -a
+  744  ls
+  745  cd cookbooks/
+  746  ls
+  747  cd 1/
+  748  ls
+  749  cd ..
+  750  cd chef
+  751  ls
+  752  cd ..
+  753  ls
+  754  cd ..
+  755  knife
+  756  knife cookbook delete cookbooks 
+  757  knife cookbook delete cookbook
+  758  knife cookbook upload users
+  759  ls
+  760  cd nodes/
+  761  ls
+  762  ls
+  763  cd ..
+  764  knife 
+  765  knife cookbooks
+  766  knife cookbook
+  767  knife cookbook list
+  768  ls
+  769  cd cookbooks/
+  770  ls
+  771  cd /
+  772  find . -name users
+  773  cd /root/
+  774  ls
+  775  cd cookbooks
+  776  ls
+  777  cd /root/
+  778  ls
+  779  vi config
+  780  ls
+  781  cd cookbooks
+  782  ls
+  783  rm -rf cookbooks/
+  784  vi users/recipes/all.rb 
+  785  pwd
+  786  cd ..
+  787  ls
+  788  knife cookbooks upload -a
+  789  knife cookbook upload -a
+  790  vi cookbooks/users/metadata.rb 
+  791  vi cookbooks/users/recipes/all.rb 
+  792  knife | grep cookbook
+  793  knife cookbook delete users 1.1.2
+  794  knife users data bag
+  795  vi cookbooks/users/README.md 
+  796  knife data bag list
+  797  knife data bag list users
+  798  knife data bag delete users rags
+  799  history
+  800  history |grep knife
+  801  history | run_list
+  802  history | grep run_list
+  803  knife node run_list add grap-017 sudo
+  804  history
+  805  knife --help
+  806  knife node run_list add grape-017 sudo
+  807  knife node run_list add grape-017 users
+  808  knife node run_list add grape-017 chef-client
+  809  ls
+  810  cd cookbooks
+  811  ls
+  812  cd chef-client/
+  813  ls
+  814  cd recipes/
+  815  ls
+  816  more config.rb 
+  817  cd /root/
+  818  cd cpp
+  819  cd cookbooks
+  820  cd sudo/
+  821  ls
+  822  vi recipes/default.rb 
+  823  vi recipes/default.rb 
+  824  ls
+  825  cd cookbooks
+  826  ls
+  827  ckear
+  828  clear
+  829  ls
+  830  ls
+  831  cd users/
+  832  ls
+  833  vi metadata.rb 
+  834  clear
+  835  cd ntp
+  836  ls
+  837  cd ..
+  838  cd ntp/
+  839  ls
+  840  cd recipes/
+  841  ls
+  842  vi default.rb 
+  843  clear
+  844  clear
+  845  ls
+  846  clear
+  847  ls
+  848  ls
+  849  cat default.rb 
+  850  clear
+  851  ls
+  852  cd ..
+  853  ls
+  854  vi cookbooks/sudo/recipes/default.rb 
+  855  vi cookbooks/users/recipes/all.rb 
+  856  vi cookbooks/users/recipes/default.rb 
+  857  knife cookbook upload users
+  858  diff /var/chef/cookbooks/users/recipes/all.rb cookbooks/users/recipes/all.rb 
+  859  cp /var/chef/cookbooks/users/recipes/all.rb cookbooks/users/recipes/all.rb 
+  860  knife cookbook upload users
+  861  ls
+  862  knife node run_list add grape-018 chef-client
+  863  knife node run_list add grape-018 chef-client,users,sud
+  864  knife node run_list add grape-018 chef-client,users,sudo
+  865  knife node run_list delete grape-018 chef-client,users,sud
+  866  knife node run_list delete grape-018 sud
+  867  knife node run_list remove grape-018 sud
+  868  knife node run_list remove grape-018 recipe[chef-client,users,sud]
+  869  knife node run_list remove grape-018 recipe[chef-client,users,sudo]
+  870  knife node run_list add grape-018 chef-client
+  871  knife node run_list add grape-018 sudo
+  872  knife node run_list add grape-018 users
+  873  find . -name sudoers.rb
+  874  find . -name sudoers*
+  875  vi cookbooks/sudo/templates/default/sudoers.erb 
+  876  knife cookbook upload users
+  877  vi cookbooks/users/recipes/all.rb 
+  878  vi cookbooks/users/recipes/default.rb 
+  879  knife cookbook list
+  880  knife | grep cookbook
+  881  knife cook delete sudo 1.0.2
+  882  knife cookbook delete sudo 1.0.2
+  883  vi /etc/sudoers 
+  884  vi /etc/sudoers 
+  885  vi cookbooks/sudo/recipes/default.rb 
+  886  vi cookbooks/users/recipes/all.rb 
+  887  vi cookbooks/sudo/templates/default/sudoers.erb 
+  888  vi /etc/sudoers 
+  889  knife role create it
+  890  export EDITOR=vi
+  891  knife role create it
+  892  export EDITOR=vi
+  893  knife | grep node
+  894  knife node edit grape-018
+  895  knife node edit grape-018
+  896  knife node edit grape-016
+  897  knife node edit grape-016
+  898  knife node edit grape-016
+  899  history
+  900  vi ~/.chef/bootstrap/rhel5-rbel.erb 
+  901  vi ~/.chef/knife.rb
+  902  knife cookbook list
+  903  vi ~/.chef/bootstrap/rhel5-rbel.erb 
+  904  vi /etc/chef/server.rb 
+  905  vi ~/.chef/bootstrap/rhel5-rbel.erb 
+  906  knife node edit grape-016
+  907  knife node edit grape-018
+  908  knife node edit grape-018
+  909  knife node edit grape-017
+  910  find . -name client.rb
+  911  vi /etc/chef/client.rb
+  912  vi ~/.chef/bootstrap/rhel5-rbel.erb 
+  913  vi /etc/chef/first-boot.json
+  914  vi /etc/chef/first-boot.json
+  915  vi /etc/chef/first-boot.json
+  916  history | grep boot
+  917  knife bootstrap -d rhel5-rbel 10.1.4.15 --ssh-user=root --sh-password=couchbase
+  918  knife bootstrap -d rhel5-rbel 10.1.4.15 --ssh-user=root --ssh-password=couchbase
+  919  ssh root@10.1.4.14
+  920  ssh root@10.1.4.15
+  921  ssh root@10.1.4.15
+  922  vi ~/.chef/bootstrap/rhel5-rbel.erb 
+  923  vi /etc/chef/first-boot.json 
+  924  knife node edit grape-016
+  925  vi /etc/chef/first-boot.json 
+  926  knife bootstrap -d rhel5-rbel 10.1.4.15 --ssh-user=root --ssh-password=couchbase
+  927  vi /etc/chef/first-boot.json 
+  928  vi ~/.chef/bootstrap/rhel5-rbel.erb 
+  929  vi /etc/chef/first-boot.json 
+  930  vi /etc/chef/first-boot.json 
+  931  knife node edit grap-016 
+  932  knife node edit grape-016 
+  933  vi ~/.chef/bootstrap/rhel5-rbel.erb 
+  934  knife bootstrap
+  935  knife
+  936  knife bootstrap --help
+  937  knife bootstrap -d rhel5-rbel 10.1.4.15 --ssh-user=root --ssh-password=couchbase --run-list it
+  938  knife bootstrap -d rhel5-rbel 10.1.4.15 --ssh-user=root --ssh-password=couchbase --run-list 'role[it']
+  939  knife bootstrap -d rhel5-rbel 10.1.4.15 --ssh-user=root --ssh-password=couchbase --run-list 'role[it]'
+  940  knife bootstrap -d rhel5-rbel 10.3.121.148 --ssh-user=root --ssh-password=couchbase --run-list 'role[it]'
+  941  ssh root@10.3.121.148
+  942  ssh root@10.3.121.148
+  943  knife bootstrap -d rhel5-rbel 10.3.121.148 --ssh-user=root --ssh-password=password --run-list 'role[it]'
+  944  ssh root@10.3.121.148
+  945  ssh root@10.3.121.148
+  946  ssh root@10.3.121.148
+  947  ssh root@10.3.121.148
+  948  ssh root@10.3.121.148
+  949  ssh root@10.3.121.148
+  950  knife bootstrap -d rhel5-rbel 10.1.4.16 --ssh-user=root --ssh-password=couchbase --run-list='role[it]'
+  951  history | grep bag
+  952  knife data bag edit users peter
+  953  knife data bag create users maria
+  954  knife
+  955  knife data bag create users maria
+  956  knife data bag edit users maria
+  957  knife data bag edit users farshid
+  958  knife data bag edit users maria
+  959  knife data bag edit users maria
+  960  ifconfig
+  961  knife bootstrap -d rhel5-rbel 10.1.4.16 --ssh-user=root --ssh-password=password --run-list 'role[it]'
+  962  knife bootstrap -d rhel5-rbel 10.1.4.16 --ssh-user=root --ssh-password=couchbase --run-list 'role[it]'
+  963  knife node run_list add grape-019 sudo
+  964  knife node run_list add grape-019 users
+  965  knife node run_list add grape-019 chef-client
+  966  knife bootstrap -d rhel5-rbel 10.1.4.16 --ssh-user=root --ssh-password=couchbase --run-list 'role[it]'
+  967  knife bootstrap -d rhel5-rbel 10.1.4.16 --ssh-user=root --ssh-password=couchbase --run-list 'role[it]'
+  968  knife bootstrap -d rhel5-rbel 10.1.4.16 --ssh-user=root --ssh-password=couchbase --run-list 'role[it]'
+  969  ls
+  970  cd cookbooks
+  971  ls
+  972  cd chef-client/
+  973  ls
+  974  cd attributes/
+  975  ls
+  976  more default.rb 
+  977  ls
+  978  cd ..
+  979  ls
+  980  cd recipes/
+  981  ls
+  982  more default.rb 
+  983  ls
+  984  more service.rb 
+  985  grep sudo ./*
+  986  ls
+  987  cd ..
+  988  knife bootstrap -d rhel5-rbel 10.1.4.16 --ssh-user=root --ssh-password=couchbase --run-list 'role[it]'
+  989  knife bootstrap --help
+  990  knife bootstrap -d rhel5-rbel 10.1.4.16 --ssh-user=root --ssh-password=couchbase --run-list='role[it]'
+  991  history
+  992  knife data bag edit users maria
+  993  cd ..
+  994  cd ..
+  995  pwd
+  996  knife data bag edit users maria
+  997  export EDITOR=vi
+  998  knife data bag edit users maria
+  999  knife bootstrap -d rhel5-rbel 10.1.4.20 --ssh-user=root --ssh-password=couchbase --run-list='role[it]'
+ 1000  ifconfig
+ 1001  ls
+ 1002  knife bootstrap 10.3.2..88 -d centos5-gems
+ 1003  hisotry
+ 1004  history
+ 1005  cd /etc/
+ 1006  ls
+ 1007  cd chef/
+ 1008  ls
+ 1009  cd
+ 1010  ifconfig
+ 1011  cd cookbooks
+ 1012  ls
+ 1013  history
+ 1014  history > temp.out
