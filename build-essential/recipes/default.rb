@@ -17,83 +17,76 @@
 # limitations under the License.
 #
 
-case node['platform']
-when "ubuntu","debian"
-  %w{build-essential binutils-doc devscripts ruby-dev rake libncurses5-dev openssl libssl-dev git-core libtool python-setuptools python-dev s3cmd debhelper libsasl2-dev scons}.each do |pkg|
-    package pkg do
-      action :install
+require 'chef/shell_out'
+
+compiletime = node['build_essential']['compiletime']
+
+case node['platform_family']
+when "rhel", "suse", "fedora", "debian"
+
+  # on apt-based platforms when first provisioning we need to force
+  # apt-get update at compiletime if we are going to try to install at compiletime
+  if node['platform_family'] == "debian"
+    execute "apt-get-update-build-essentials" do
+      command "apt-get update"
+      action :nothing
+      # tip: to suppress this running every time, just use the apt cookbook
+      not_if do
+        ::File.exists?('/var/lib/apt/periodic/update-success-stamp') &&
+        ::File.mtime('/var/lib/apt/periodic/update-success-stamp') > Time.now - 86400*2
+      end
+    end.run_action(:run) if compiletime
+  end
+
+  packages = case node['platform_family']
+    when "debian"
+      %w{build-essential binutils-doc}
+    when "rhel", "fedora"
+      %w{gcc gcc-c++ kernel-devel make}
+    when "suse"
+      %w{gcc gcc-c++ kernel-default-devel make m4}  # in SLES there is no kernel-devel
     end
-  end
-when "centos","redhat","fedora","amazon"
-  %w{gcc gcc-c++ kernel-devel make ncurses-devel openssl-devel rpm-build python-setuptools python-devel git cyrus-sasl-devel openssl-devel libtool scons}.each do |pkg|
-    package pkg do
-      action :install
+
+  packages.each do |pkg|
+    r = package pkg do
+      action ( compiletime ? :nothing : :install )
     end
+    r.run_action(:install) if compiletime
   end
-  bash "install_s3cmd" do
-    user "root"
-    cwd "/tmp"
-    code <<-EOH
-    (cd /tmp;rm -rf /tmp/s3cmd;git clone git://github.com/couchbaselabs/s3cmd.git;)
-    (cd /tmp/s3cmd;git reset --hard eb9330fffd0214259a079f550c2c5ed27f959972;)
-    (cd /tmp/s3cmd;sudo python setup.py install;)
-    EOH
+
+  %w{autoconf flex bison}.each do |pkg|
+    r = package pkg do
+      action ( compiletime ? :nothing : :install )
+    end
+    r.run_action(:install) if compiletime
   end
+
+when "smartos"
+    include_recipe 'pkgin'
+    %w{gcc47 gcc47-runtime scmgit-base gmake pkg-config binutils}.each do |package|
+      pkgin_package package do
+        action :install
+      end
+    end
+
+when "mac_os_x"
+  result = Chef::ShellOut.new("pkgutil --pkgs").run_command
+  osx_gcc_installer_installed = result.stdout.split("\n").include?("com.apple.pkg.gcc4.2Leo")
+  developer_tools_cli_installed = result.stdout.split("\n").include?("com.apple.pkg.DeveloperToolsCLI")
+  pkg_filename = File.basename(node['build_essential']['osx']['gcc_installer_url'])
+  pkg_path = "#{Chef::Config[:file_cache_path]}/#{pkg_filename}"
+
+  r = remote_file pkg_path do
+    source node['build_essential']['osx']['gcc_installer_url']
+    checksum node['build_essential']['osx']['gcc_installer_checksum']
+    action ( compiletime ? :nothing : :create )
+    not_if { osx_gcc_installer_installed or developer_tools_cli_installed  }
+  end
+  r.run_action(:create) if compiletime
+
+  r = execute "sudo installer -pkg \"#{pkg_path}\" -target /" do
+    action ( compiletime ? :nothing : :run )
+    not_if { osx_gcc_installer_installed or developer_tools_cli_installed  }
+  end
+  r.run_action(:run) if compiletime
 end
-
-case node['platform']
-when "centos","amazon","fedora"
-  bash "install automake-1.11" do
-     user "root"
-     cwd = "/tmp"
-     code <<-EOH
-     (cd /tmp;rm -f automake-1.11.1.tar.bz2;wget http://ftp.gnu.org/gnu/automake/automake-1.11.1.tar.bz2;)
-     (cd /tmp;rm -rf /tmp/automake-1.11.1;tar -xvf automake-1.11.1.tar.bz2;)
-     (cd /tmp/automake-1.11.1;./configure;make;make install;)
-     EOH
-  end
-end
-
-case node['platform']
-when "centos","amazon","fedora"
-  bash "install libtool" do
-     user "root"
-     cwd = "/tmp"
-     code <<-EOH
-     (cd /tmp;rm -rf libtool-2.4.2.tar.gz;wget http://ftpmirror.gnu.org/libtool/libtool-2.4.2.tar.gz;)
-     (cd /tmp;rm -rf libtool-2.4.2;tar -xvf libtool-2.4.2.tar.gz;)
-     (cd /tmp/libtool-2.4.2;./configure;make;make install;)
-     EOH
-  end
-end
-
-unless node['platform'] == 'mac_os_x'
-  package "autoconf" do
-    action :install
-  end
-
-  package "flex" do
-    action :install
-  end
-
-  package "bison" do
-    action :install
-  end
-end
-
-case node['platform']
-when "ubuntu","debian","centos","redhat","fedora","amazon"
-  bash "chmod_opt" do
-    user "root"
-    cwd "/tmp"
-    code "chmod a+w /opt"
-  end
-end
-
-cookbook_file "/usr/bin/repo" do
-  owner 0
-  group 0
-  mode "0755"
-end
-
-gem_package "rake"
