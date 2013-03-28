@@ -1,6 +1,9 @@
-maintainer       "DreamHost.com"
-maintainer_email "brett.gailey@dreamhost.com"
-license          "Apache 2.0"
-description      "Installs/Configures/LWRP for supervisord"
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.0.1"
+maintainer       "Maciej Pasternacki"
+maintainer_email "maciej@pasternacki.net"
+license          "WTFPL"
+description      "Installs/Configures supervisord"
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
+version          "0.1.0"
+
+supports "ubuntu"
+supports "debian", ">= 6.0"
