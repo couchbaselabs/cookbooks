@@ -21,6 +21,7 @@
 require 'chef/mixin/shell_out'
 require 'chef/mixin/language'
 include Chef::Mixin::ShellOut
+include Chef::Mixlib::ShellOut
 
 # the logic in all action methods mirror that of 
 # the Chef::Provider::Package which will make
