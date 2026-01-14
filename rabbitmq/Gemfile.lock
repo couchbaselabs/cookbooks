@@ -25,7 +25,7 @@ GEM
       pry
       safe_yaml
       thor
-    thor (0.17.0)
+    thor (1.4.0)
     timers (1.1.0)
 
 PLATFORMS
